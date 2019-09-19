@@ -31,20 +31,64 @@ let curWord = '';
 //   }
 // }
 
-// TASK 1, ASYNC
+// TASK 1, ASYNC -- write to file
+
+// clears out file before another run through
+fs.writeFileSync('testAsync.txt', '');
+
 // instantiate promise object to chain on following promises, in numeric order
+let promiseChain = Promise.resolve();
+let bodyToSend = '';
 
-// let promiseChain = Promise.resolve();
-// for (let i = 1; i <= 100; i += 1) {
-//   promiseChain = promiseChain
-//     .then(() => getRandomWord({ withErrors: true }))
-//     .then(word => console.log(`${i}: ${word}`))
-//     .catch(err => {
-//       console.log("It shouldn't break anything!");
-//     });
-// }
+for (let i = 1; i <= 100; i += 1) {
+  promiseChain = promiseChain
+    .then(() => getRandomWord({ withErrors: true }))
+    .then(word => {
+      console.log(`${i}: ${word}`);
+      bodyToSend += `${i}: ${word}\n`;
+      fs.appendFile('testAsync.txt', `${i}: ${word}\n`, writeErr => {
+        if (writeErr) throw writeErr;
+        if (i === 100) {
+          // do post req to backend -- commented out to avoid error
+          // fetch('/api', {
+          //   method: 'POST',
+          //   body: JSON.stringify({ text: bodyToSend }),
+          //   headers: {
+          //     'Content-Type': 'application/json'
+          //   }
+          // })
+          //   .then(res => res.json())
+          //   .then(data => console.log('sent to api'))
+          //   .catch(e => console.log('Error sending to backend.'));
+        }
+      });
+    })
+    .catch(err => {
+      console.log("It shouldn't break anything!");
+      bodyToSend += `It shouldn't break anything!\n`;
+      fs.appendFile('testAsync.txt', `It shouldn't break anything!\n`, writeErr => {
+        if (writeErr) throw writeErr;
+      });
+      if (i === 100) {
+        // do post req to backend -- commented out to avoid error
+        // fetch('/api', {
+        //   method: 'POST',
+        //   body: JSON.stringify({ text: bodyToSend }),
+        //   headers: {
+        //     'Content-Type': 'application/json'
+        //   }
+        // })
+        //   .then(res => res.json())
+        //   .then(data => console.log('sent to api'))
+        //   .catch(e => console.log('Error sending to backend.'));
+      }
+    });
+}
 
-// TASK 2, ASYNC
+// TASK 2, ASYNC -- write to file
+
+// clears out file before another run through
+fs.writeFileSync('testAsync2.txt', '');
 
 let promiseChain2 = Promise.resolve();
 for (let i = 1; i <= 100; i += 1) {
@@ -65,13 +109,13 @@ for (let i = 1; i <= 100; i += 1) {
         console.log(`${i}: ${word}`);
         phraseToWrite2 = `${i}: ${word}`;
       }
-      fs.appendFile('test2.txt', `${phraseToWrite2}\n`, writeErr => {
+      fs.appendFile('testAsync2.txt', `${phraseToWrite2}\n`, writeErr => {
         if (writeErr) throw writeErr;
       });
     })
     .catch(err => {
       console.log("It shouldn't break anything!");
-      fs.appendFile('test2.txt', `It shouldn't break anything!\n`, writeErr => {
+      fs.appendFile('testAsync2.txt', `It shouldn't break anything!\n`, writeErr => {
         if (writeErr) throw writeErr;
       });
     });
