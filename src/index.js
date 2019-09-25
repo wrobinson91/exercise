@@ -10,16 +10,16 @@ console.log('It works!');
 // TASK 1 BELOW
 let curWord = '';
 
-// MODIFIED TO CATCH ERRORSFOR SYNC METHOD
+// MODIFIED TO CATCH ERRORS FOR SYNC METHOD
 
 // for (let i = 1; i <= 100; i += 1) {
-// Try to receive a word after invoking getRandomWordSync with errors on
+//   // Try to receive a word after invoking getRandomWordSync with errors on
 //   try {
 //     curWord = getRandomWordSync({ withErrors: true });
-// if successful, print out current word
+//     // if successful, print out current word
 //     console.log(`${i}: ${curWord}`);
 //   } catch (err) {
-// if unsuccessful, print out provided error message
+//     // if unsuccessful, print out provided error message
 //     console.log("It shouldn't break anything!");
 //   }
 // }
@@ -28,26 +28,34 @@ let curWord = '';
 // MODIFIED TO CATCH ERRORSFOR SYNC METHOD
 
 // for (let i = 1; i <= 100; i += 1) {
-// Try to receive a word after invoking getRandomWordSync with errors on
+//   // Try to receive a word after invoking getRandomWordSync with errors on
 //   try {
-// if successful it will:
-// a) print our FizzBuzz if num is divisible by 3 and 5
+//     // if successful it will:
+//     // a) print our FizzBuzz if num is divisible by 3 and 5
 //     curWord = getRandomWordSync({ withErrors: true });
 //     if (i % 5 === 0 && i && i % 3 === 0) console.log('FizzBuzz');
 //     else if (i % 5 === 0) console.log('Buzz');
-// b) print out Buzz if it is only divis by 5
+//     //  b) print out Buzz if it is only divis by 5
 //     else if (i % 3 === 0) console.log('Fizz');
-// c) print out Fizz if it is only divisible by 3
+//     //  c) print out Fizz if it is only divisible by 3
 //     else {
 //       console.log(`${i}: ${curWord}`);
-// d) print out the current word if the function is successful
-// but not disible by 3 or 5
+//       //  d) print out the current word if the function is successful
+//       //  but not divisible by 3 or 5
 //     }
 //   } catch (err) {
-// if unsuccessful, print out provided error message
+//     //  if unsuccessful, print out provided error message
 //     console.log("It shouldn't break anything!");
 //   }
 // }
+
+// ASYNC SECTION BELOW
+/*
+  NOTE: COMMENT OUT AND RUN ONE AT A TIME. Each loop will run in order respective of itself, but 
+  compared to each other, the entirety of TASK 1 will not completed before the entirety of TASK 2
+  as both are added to the microtask queue, but are completed based on each event's speed
+  for example: the Task 1 tasks will race against the Task 2 tasks
+*/
 
 // TASK 1, ASYNC -- conosle log + write to file, with commented out API call
 
@@ -124,6 +132,8 @@ for (let i = 1; i <= 100; i += 1) {
     });
 }
 
+console.log('\n\n\n\nbreak between Task 1 and Task 2\n\n\n\n');
+
 // TASK 2, ASYNC -- write to file and console, commented out API call
 // similar to TASK 1, ASYNC, except with the FizzBuzz functionality
 
@@ -169,3 +179,5 @@ for (let i = 1; i <= 100; i += 1) {
       });
     });
 }
+
+console.log('\n\n\n\nend of both tasks in main thread\n\n\n\n');
