@@ -1,0 +1,100 @@
+1: leaving
+2: curve
+3: heavy
+4: label
+5: orbit
+6: rays
+7: surface
+8: rain
+9: spring
+10: pictured
+11: individual
+It shouldn't break anything!
+13: courage
+14: told
+15: frequently
+16: fur
+17: join
+18: month
+19: metal
+20: ourselves
+21: perfect
+22: story
+23: fog
+24: village
+25: problem
+26: feathers
+27: count
+28: introduced
+29: chair
+30: rock
+31: three
+32: steel
+33: hold
+34: rope
+35: honor
+36: plain
+It shouldn't break anything!
+38: wood
+39: heat
+40: bow
+41: once
+42: imagine
+43: club
+44: command
+It shouldn't break anything!
+46: mistake
+47: bar
+48: asleep
+49: heart
+50: exist
+51: snake
+It shouldn't break anything!
+53: thick
+54: car
+It shouldn't break anything!
+56: laugh
+57: bread
+58: usually
+59: chart
+60: blanket
+61: form
+62: smoke
+63: settle
+64: friend
+It shouldn't break anything!
+66: mysterious
+67: dry
+68: nature
+69: impossible
+It shouldn't break anything!
+It shouldn't break anything!
+72: century
+73: diameter
+74: fix
+75: closer
+76: hidden
+It shouldn't break anything!
+78: author
+It shouldn't break anything!
+80: listen
+81: anything
+82: many
+83: volume
+It shouldn't break anything!
+It shouldn't break anything!
+86: red
+It shouldn't break anything!
+It shouldn't break anything!
+89: electric
+90: after
+It shouldn't break anything!
+92: below
+93: brain
+94: thank
+95: fight
+96: shells
+97: bee
+98: frequently
+99: were
+100: pass
