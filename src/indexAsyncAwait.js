@@ -27,7 +27,7 @@ fs.writeFileSync('testAsyncAwait.txt', '');
       // finally block: no matter if there's a new word or an error, the result must be printed and written
       // to the file
       console.log(phraseToPrint);
-      fs.appendFile('testAsyncAwait.txt', `${phraseToPrint}\n`, writeErr => {
+      await fs.appendFile('testAsyncAwait.txt', `${phraseToPrint}\n`, writeErr => {
         // if there's an error in write process, throw error
         if (writeErr) throw writeErr;
       });
